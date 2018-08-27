@@ -9,3 +9,11 @@ router.get('/', (request, response, next) => {
     .catch(next)
 })
   
+
+router.get('/', (request, response, next) => {
+  queries.list()
+    .then(authors => {
+      response.json({authors})
+    })
+    .catch(next)
+})

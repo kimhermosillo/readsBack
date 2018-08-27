@@ -5,4 +5,7 @@ module.exports = {
   list() {
     return database('books')
   },
+  list() {
+    return database('authors')
+  },
 }
