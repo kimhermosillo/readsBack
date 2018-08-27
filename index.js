@@ -1,6 +1,13 @@
-const app = require ('./app')
-const port = parseInt(process.env.PORT || 7000)
+const express = require('express')
+const port = 7000
+const app = express()
 
-app.listen(port)
-  .on('error', console.error.bind(console))
-  .on('listening', console.log.bind(console, 'trappin outta' + port))
+app.get('/', (request, response, next) => {
+  response.send('hiiiiii')
+})
+
+app.listen(port, () => {
+  console.log(`running on ${port}`)
+})
+
+module.exports = app
