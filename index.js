@@ -1,13 +1,10 @@
-const express = require('express')
 const port = 7000
-const app = express()
+const app = require('./app')
 
-app.get('/', (request, response, next) => {
-  response.send('hiiiiii')
-})
 
-app.listen(port, () => {
-  console.log(`running on ${port}`)
-})
 
-module.exports = app
+
+
+app.listen(port)
+  .on('error',     console.error.bind(console))
+  .on('listening', console.log.bind(console, 'Listening on onoooko ' + port))
